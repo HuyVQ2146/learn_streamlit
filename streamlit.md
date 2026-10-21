@@ -122,7 +122,7 @@ git push
 * Nhấn **Deploy** và chờ vài phút để Streamlit cài thư viện và khởi chạy.
 
 ### Bước 4: Chia sẻ & cập nhật
-* Sau khi deploy xong, copy link `https://<ten-app>.streamlit.app` để gửi cho người khác.
+* Sau khi deploy xong, copy link `https://learnapp-aaygfyrzfyogdku3pxxumk.streamlit.app/` để gửi cho người khác.
 * **Tự động cập nhật:** mỗi lần `git push` lên branch `main`, ứng dụng sẽ tự động redeploy với code mới.
 * Quản lý app (xem log, reboot, xóa, chỉnh secrets) tại trang dashboard của [share.streamlit.io](https://share.streamlit.io/).
 
