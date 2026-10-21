@@ -41,7 +41,7 @@ streamlit run main.py
   You can now view your Streamlit app in your browser.
 
   Local URL: http://localhost:8502
-  Network URL: http://192.168.1.126:8502
+  Network URL: http://192.168.x.x:8502
 
   Help agents write better Streamlit apps?
   Install the official Streamlit skills by running streamlit skills in your terminal.
@@ -49,7 +49,7 @@ streamlit run main.py
 
 ### Giải thích các thông số:
 * **Local URL (`http://localhost:8502`):** Địa chỉ truy cập ứng dụng trực tiếp trên chính máy tính của bạn thông qua trình duyệt web.
-* **Network URL (`http://192.168.1.126:8502`):** Địa chỉ IP nội bộ, cho phép các thiết bị khác (điện thoại, máy tính khác) cùng kết nối chung mạng Wi-Fi/LAN truy cập thử nghiệm giao diện.
+* **Network URL (`http://192.168.x.x:8502`):** Địa chỉ IP nội bộ, cho phép các thiết bị khác (điện thoại, máy tính khác) cùng kết nối chung mạng Wi-Fi/LAN truy cập thử nghiệm giao diện.
 * **Cổng (Port 8502):** Streamlit mặc định dùng cổng `8501`. Nếu cổng `8501` đang bận hoặc có tiến trình khác đang chạy, Streamlit sẽ tự động chuyển sang `8502`.
 
 ---
