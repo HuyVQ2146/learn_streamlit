@@ -80,3 +80,54 @@ streamlit run main.py --server.address localhost
 
 * Nhấp chuột vào cửa sổ terminal đang chạy server.
 * Nhấn tổ hợp phím **`Ctrl + C`**.
+
+---
+
+## 5. Chia sẻ ứng dụng lên Internet với Streamlit Community Cloud
+
+[Streamlit Community Cloud](https://share.streamlit.io/) cho phép deploy **miễn phí** ứng dụng Streamlit trực tiếp từ GitHub, tạo ra một đường link public (dạng `https://<ten-app>.streamlit.app`) để ai cũng có thể truy cập.
+
+### Bước 1: Chuẩn bị repository trên GitHub
+Repository cần là **public** và chứa:
+
+* File ứng dụng chính (ví dụ: `factorial_app.py`).
+* File `requirements.txt` liệt kê các thư viện cần thiết, ví dụ:
+
+```text
+streamlit
+pandas
+numpy
+```
+
+Push code lên GitHub:
+
+```bash
+git add factorial_app.py requirements.txt
+git commit -m "Prepare for Streamlit Cloud deploy"
+git push
+```
+
+### Bước 2: Đăng nhập Streamlit Community Cloud
+* Truy cập [https://share.streamlit.io/](https://share.streamlit.io/).
+* Chọn **Continue with GitHub** và cấp quyền cho Streamlit truy cập repository.
+
+### Bước 3: Tạo ứng dụng mới
+* Nhấn **Create app** → chọn **Deploy a public app from GitHub**.
+* Điền thông tin:
+  * **Repository:** `HuyVQ2146/learn_streamlit`
+  * **Branch:** `main`
+  * **Main file path:** `factorial_app.py`
+  * **App URL (tùy chọn):** đặt tên miền con dễ nhớ, ví dụ `huy-factorial.streamlit.app`.
+* (Tùy chọn) Mở **Advanced settings** để chọn phiên bản Python hoặc khai báo **Secrets** (API key, mật khẩu...).
+* Nhấn **Deploy** và chờ vài phút để Streamlit cài thư viện và khởi chạy.
+
+### Bước 4: Chia sẻ & cập nhật
+* Sau khi deploy xong, copy link `https://<ten-app>.streamlit.app` để gửi cho người khác.
+* **Tự động cập nhật:** mỗi lần `git push` lên branch `main`, ứng dụng sẽ tự động redeploy với code mới.
+* Quản lý app (xem log, reboot, xóa, chỉnh secrets) tại trang dashboard của [share.streamlit.io](https://share.streamlit.io/).
+
+### Lưu ý
+* **Không** commit thông tin nhạy cảm (API key, mật khẩu) lên GitHub — hãy dùng mục **Secrets** và đọc bằng `st.secrets["TEN_KEY"]`.
+* App không có người truy cập trong thời gian dài sẽ tự **ngủ (sleep)**; khi có người mở link, nhấn nút đánh thức để chạy lại.
+* Tài nguyên miễn phí có giới hạn (RAM ~1GB), phù hợp cho demo và học tập.
+
